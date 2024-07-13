@@ -1,0 +1,18 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
+span {
+    margin-right: 5px;
+}
+
+span:last-child {
+    margin-left: 0;
+}
+
+.highlite {
+    background-color: cadetblue;
+    color: aliceblue;
+}
