@@ -29,7 +29,7 @@ startButton.addEventListener('click', function() {
 
 input.addEventListener('input', function(event) {
 
-    if (event.target.value === splitedText[cuurrentWordOrder]) {
+    if (event.target.value.trim() === splitedText[cuurrentWordOrder]) {
 
         textField.childNodes[cuurrentWordOrder].className = 'highlite'
         cuurrentWordOrder++
