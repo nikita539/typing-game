@@ -4,10 +4,14 @@ const textField = document.getElementById('text_field')
 
 
 const text = [
-    "Hello my name is Nikita !"
+    "Hello my name is Nikita !",
+    "I live in Russia",
 ]
 const splitedText = text[0].split(' ')
-let cuurrentWordOrder = 0
+
+// numbers of orders
+let cuurrentSentenceOrder = 0;
+let cuurrentWordOrder = 0;
 
 
 startButton.addEventListener('click', function() {
@@ -15,7 +19,7 @@ startButton.addEventListener('click', function() {
     textField.innerText = null
     
     // insert text into textfield
-    text[0].split(' ').forEach((word) => {
+    text[cuurrentSentenceOrder].split(' ').forEach((word) => {
         const el = document.createElement('span')
         el.innerText = word
         textField.appendChild(el)
@@ -28,6 +32,10 @@ startButton.addEventListener('click', function() {
 
 
 input.addEventListener('input', function(event) {
+
+    if (cuurrentWordOrder == text[cuurrentSentenceOrder].length - 1) {
+        console.log("game is end. Your score is .....")
+    }
 
     if (event.target.value.trim() === splitedText[cuurrentWordOrder]) {
 
