@@ -2,9 +2,12 @@ const startButton = document.getElementById('start_buton')
 const input = document.getElementById('input')
 const textField = document.getElementById('text_field')
 
+
 const text = [
     "Hello my name is Nikita !"
 ]
+const splitedText = text[0].split(' ')
+let cuurrentWordOrder = 0
 
 
 startButton.addEventListener('click', function() {
@@ -23,6 +26,15 @@ startButton.addEventListener('click', function() {
     
 })
 
+
 input.addEventListener('input', function(event) {
-    
+
+    if (event.target.value === splitedText[cuurrentWordOrder]) {
+
+        textField.childNodes[cuurrentWordOrder].className = 'highlite'
+        cuurrentWordOrder++
+        event.target.value = ''
+
+    }
+
 })
