@@ -3,20 +3,24 @@ const input = document.getElementById('input')
 const textField = document.getElementById('text_field')
 
 const text = [
-    "Hello dude, how are you ?"
+    "Hello my name is Nikita !"
 ]
 
 
 startButton.addEventListener('click', function() {
-
-    const elements = text[0].split(' ')
-
-    elements.forEach((item) => {
-        const elem = document.createElement('span')
-        elem.innerText = item
-        textField.appendChild(elem)
+    // clear textField
+    textField.innerText = null
+    
+    // insert text into textfield
+    text[0].split(' ').forEach((word) => {
+        const el = document.createElement('span')
+        el.innerText = word
+        textField.appendChild(el)
     })
 
+    // disable start buton
+    startButton.disabled = true
+    
 })
 
 input.addEventListener('input', function(event) {
