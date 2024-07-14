@@ -33,8 +33,8 @@ startButton.addEventListener('click', function() {
 
 input.addEventListener('input', function(event) {
 
-    if (cuurrentWordOrder == text[cuurrentSentenceOrder].length - 1) {
-        console.log("game is end. Your score is .....")
+    if (cuurrentWordOrder == splitedText.length - 1) {
+        alert(`game is end. Your score is ${cuurrentWordOrder} and ${splitedText.length - 1}`)
     }
 
     if (event.target.value.trim() === splitedText[cuurrentWordOrder]) {
