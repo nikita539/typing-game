@@ -2,6 +2,7 @@
 const startButton = document.getElementById('start_buton')
 const input = document.getElementById('input')
 const textField = document.getElementById('text_field')
+const score = document.getElementById('score')
 
 // Global variables
 const text = [
@@ -40,7 +41,7 @@ input.addEventListener('input', function(event) {
         textField.childNodes[cuurrentWordOrder].className = 'highlite'
         textField.childNodes[cuurrentWordOrder - 1].className = ''
         event.target.value = ''
-        console.log(`your score is ${(Date.now() - startTime) / 1000}`)
+        score.innerText = `your score is ${(Date.now() - startTime) / 1000} sec`
         return
     }
 
